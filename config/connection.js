@@ -1,15 +1,15 @@
-var mysql = require("mysql");
-
-var connection;
+let mysql = require("mysql");
+// const db = require("db");
+let connection;
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: burger_db,
+    host: "localhost",
+    user: "root",
+    password: "P0d%st0Phi|",
+    database: "burger_db",
   });
 }
 
