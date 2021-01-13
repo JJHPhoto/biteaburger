@@ -1,5 +1,3 @@
-const { post } = require("../../../controllers/burgers_controller");
-
 $(function () {
   $(".devour-button").on("click", function (event) {
     var id = $(this).data("id");

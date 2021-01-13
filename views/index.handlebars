@@ -1,4 +1,54 @@
-<h1>Burgers!</h1>
+<header>
+
+</header>
+
+<main>
+  <section>
+    <h1> Burgers to eat!</h1>
+    <div id="table">
+      <div id="on-table">
+        <ol>
+          {{#each burgers}}
+            {{#unless devoured}}
+              {{> burgers/devour-button devoured=true}}
+            {{/unless}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <aside>
+    <h2>Burgers eaten!</h2>
+      <div id="eaten">
+        <div id="eaten-burgers">
+          <ol>
+            {{#each burgers}}
+              {{#if devoured}}
+              <li>
+                {{burger_name}}
+                <button class="delete-button" data-id="{{id}}">Done with that!</button>
+              </li>
+              {{/if}}
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+  </aside>
+</main>
+
+<footer>
+  <h3 id="add-burger">What burger would you like made?</h3>
+  <form class="added-burgers">
+    <div class="form-group">
+      <label for="request">Request Burger:</label>
+      <input type="text" id="burger" name="burger_name">
+    </div>
+
+    <button id="add-burger" type="submit">Make Burger</button>
+  </form>
+</footer>
+{{!-- <h1>Burgers!</h1>
 
 <h2>Burgers that have not been devoured!</h2>
 
@@ -8,9 +58,9 @@
       {{> burgers/burger-block devoured=true}}
     {{/unless}}
   {{/each}}
-</ul>
+</ul> --}}
 
-<h2>Burgers that have been devoured!</h2>
+{{!-- <h2>Burgers that have been devoured!</h2>
 
 <ul>
   {{#each burgers}}
@@ -35,4 +85,4 @@
   </div>
 
   <button type="submit">Add Burger</button>
-</form>
+</form> --}}
