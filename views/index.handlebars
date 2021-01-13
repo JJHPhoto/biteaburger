@@ -10,7 +10,7 @@
         <ol>
           {{#each burgers}}
             {{#unless devoured}}
-              {{> burgers/devour-button devoured=true}}
+              {{> burgers/burger-block devoured=true}}
             {{/unless}}
           {{/each}}
         </ol>
@@ -48,41 +48,3 @@
     <button id="add-burger" type="submit">Make Burger</button>
   </form>
 </footer>
-{{!-- <h1>Burgers!</h1>
-
-<h2>Burgers that have not been devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul> --}}
-
-{{!-- <h2>Burgers that have been devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label form="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label form="eaten">Devoured!</label><br>
-    <input type="radio" name="eaten" value="1" checked> devoured!<br>
-    <input type="radio" name="eaten" value="0"> Fresh
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form> --}}
