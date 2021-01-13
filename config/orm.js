@@ -1,7 +1,7 @@
 const connection = require("./connection");
 
 const orm = {
-  selectAll: function (table, cb) {
+  selectBurgers: function (table, cb) {
     let querySelect = "SELECT * FROM ??";
     connection.query(querySelect, [table], (err, res) => {
       if (err) throw err;
@@ -9,7 +9,7 @@ const orm = {
     });
   },
 
-  insertOne: function (table, column, value, cb) {
+  insertBurger: function (table, column, value, cb) {
     let querySelect = "INSERT INTO ?? (??) VALUES (?)";
     connection.query(querySelect, [table, column, value], (err, res) => {
       if (err) throw err;
@@ -17,7 +17,7 @@ const orm = {
     });
   },
 
-  updateOne: function (table, value, id, cb) {
+  updateBurger: function (table, value, id, cb) {
     let querySelect = "UPDATE ?? SET devoured = ? WHERE id= " + id;
 
     let indexValue = value[0];
@@ -32,7 +32,7 @@ const orm = {
     });
   },
 
-  deleteOne: function (table, id, cb) {
+  deleteBurger: function (table, id, cb) {
     let querySelect = "DELETE FROM ?? WHERE id=" + id;
     connection.query(querySelect, [table, id], (err, res) => {
       if (err) throw err;
