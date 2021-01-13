@@ -8,7 +8,6 @@ $(function () {
     };
 
     // console.log(newDevoured);
-    // PUT request here!
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: newEatenBurger,

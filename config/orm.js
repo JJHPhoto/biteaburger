@@ -24,10 +24,10 @@ const orm = {
 
     let booleanValue = JSON.parse(indexValue);
 
-    console.log(booleanValue);
+    // console.log(booleanValue);
     connection.query(querySelect, [table, booleanValue], (err, res) => {
       if (err) throw err;
-      console.log(querySelect);
+      // console.log(querySelect);
       cb(res);
     });
   },
@@ -36,7 +36,7 @@ const orm = {
     let querySelect = "DELETE FROM ?? WHERE id=" + id;
     connection.query(querySelect, [table, id], (err, res) => {
       if (err) throw err;
-      console.log(querySelect);
+      // console.log(querySelect);
       cb(res);
     });
   },

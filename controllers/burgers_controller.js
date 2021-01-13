@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     const hbsObject = {
       burgers: data,
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -19,16 +19,16 @@ router.post("/api/burgers", (req, res) => {
     [req.body.name, req.body.devoured],
     (result) => {
       res.json({ id: result.insertID });
-      console.log(result);
+      // console.log(result);
     }
   );
 });
 
 router.put("/api/burgers/:id", (req, res) => {
   const id = req.params.id;
-  console.log("id", id);
-  console.log(req.body);
-  console.log(req.body.devoured);
+  // console.log("id", id);
+  // console.log(req.body);
+  // console.log(req.body.devoured);
 
   burger.updateBurger([req.body.devoured], id, (result) => {
     if (result.changeRows == 0) {
@@ -41,7 +41,7 @@ router.put("/api/burgers/:id", (req, res) => {
 
 router.delete("/api/burgers/:id", (req, res) => {
   const id = req.params.id;
-  console.log("id", id);
+  // console.log("id", id);
 
   burger.deleteBurger(id, (result) => {
     if (result.affectedRows == 0) {
