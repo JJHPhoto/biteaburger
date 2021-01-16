@@ -1,13 +1,13 @@
 $(function () {
   $(".devour-button").on("click", function (event) {
     var id = $(this).data("id");
-    var newDevoured = $(this).data("newDevoured");
+    var newDevoured = $(this).data("devoured");
 
     var newEatenBurger = {
       devoured: newDevoured,
     };
 
-    // console.log(newDevoured);
+    console.log(newDevoured);
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: newEatenBurger,
@@ -19,13 +19,15 @@ $(function () {
 });
 
 $(function () {
-  $(".create-form").on("submit", function (event) {
+  $(".add-burger").on("submit", function (event) {
     event.preventDefault();
 
     let newBurger = {
-      name: $("#ca").val().trim(),
-      eaten: $("[name=eaten]:checked").val().trim(),
+      name: $("#burger").val().trim(),
+      // eaten: $("[name=eaten]:checked").val().trim(),
     };
+
+    console.log(newBurger);
 
     $.ajax("/api/burger", {
       type: "POST",

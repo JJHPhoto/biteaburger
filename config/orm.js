@@ -24,10 +24,10 @@ const orm = {
 
     let booleanValue = JSON.parse(indexValue);
 
-    // console.log(booleanValue);
+    console.log(booleanValue);
     connection.query(querySelect, [table, booleanValue], (err, res) => {
       if (err) throw err;
-      // console.log(querySelect);
+      console.log(querySelect);
       cb(res);
     });
   },
