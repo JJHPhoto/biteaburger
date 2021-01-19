@@ -25,6 +25,8 @@
 
   Unfortunately, I didn't quite get the concept that my study group member explained to us. So, I went over the code with my tutor and we came to the conclusion that I would be best served to redo the parts of the project that were not clicking for me in my head. Which is fine. I know that this is important and I wanted to get it down.
 
+  After a lot of trial and error, I realized my MySQL statements were missing a spaces in a few of my queries. With most of those working, I decided to not try to delete the burgers and just do some styling to finish the project.
+
 ## Application Demo
 
 ![](...)
