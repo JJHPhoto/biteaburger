@@ -23,6 +23,8 @@
 - confusion
   After a confusing attempt to do too many things, I got together with a few guys from my study group. One of them had completed this homework assignment and was helping us understand the logic he used. He said he had started the same way we had, using the MVC activity as a blueprint. However, he said a lot of it was confusing to him and he went back to some of our other activitites for reference. As he explained his logic and showed us his code, it made a lot more sense to follow his logic/example and rework my files. The bit that really made it click for me was passing parameters inside our functions. That reminded us all of a previous homework assignment where we were testing code by passing paramaters inside our functions. Having that "aha!" moment was really great and having it with members of my study group made it even more special.
 
+  Unfortunately, I didn't quite get the concept that my study group member explained to us. So, I went over the code with my tutor and we came to the conclusion that I would be best served to redo the parts of the project that were not clicking for me in my head. Which is fine. I know that this is important and I wanted to get it down.
+
 ## Application Demo
 
 ![](...)
