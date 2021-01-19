@@ -4,11 +4,10 @@ function printQuestionMarks(num) {
   let arr = [];
 
   for (var i = 0; i < num; i++) {
-    arr.push("?")
+    arr.push("?");
   }
 
-  return.arr.toString()
-
+  return arr.toString();
 }
 
 function objectToSQL(ob) {
@@ -22,26 +21,25 @@ function objectToSQL(ob) {
       }
 
       arr.push(key + "=" + value);
-
     }
   }
 
-  return.arr.toString();
+  return arr.toString();
 }
 
 let orm = {
-  selectBurgers: function(tableInput, cb) {
+  selectBurgers: function (tableInput, cb) {
     let queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
-      cb(result)
-    })
+      cb(result);
+    });
   },
 
-  insertBurger: function(table, columns, values, cb) {
-    let queryString = "INSERT INTO" + table;
+  insertBurger: function (table, columns, values, cb) {
+    let queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += columns.toString();
@@ -52,8 +50,8 @@ let orm = {
 
     console.log("Create query string:" + queryString);
 
-    connection.query(queryString, values, function(err, result) {
-      if(err) {
+    connection.query(queryString, values, function (err, result) {
+      if (err) {
         throw err;
       }
 
@@ -61,18 +59,18 @@ let orm = {
     });
   },
 
-  updateBurger: function (table, objectColVals, condition, cb) {
+  updateBurger: function (table, objectColVals, id, cb) {
     let queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objectToSQL(objectColVals);
-    queryString += " WHERE";
-    queryString += objectToSQL(condition);
+    queryString += " WHERE ";
+    queryString += objectToSQL(id);
 
     console.log(queryString);
-    console.log(condition);
+    console.log(id);
 
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
@@ -81,22 +79,20 @@ let orm = {
     });
   },
 
-  deleteBurger: function (table, condition, cb) {
-    let querySelect = "DELET FROM " + table + " WHERE " + condition;
-    console.log(querySelect)
+  deleteBurger: function (table, id, cb) {
+    let querySelect = "DELET FROM " + table + " WHERE " + id;
+    console.log(querySelect);
 
-    connection.query(querySelect, function(err, result) {
+    connection.query(querySelect, function (err, result) {
       if (err) {
         throw err;
       }
       cb(result);
     });
-  }
-
+  },
 };
 
 module.exports = orm;
-
 
 // Confused me
 // const orm = {
