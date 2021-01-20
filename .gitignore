@@ -105,3 +105,6 @@ dist
 
 # PW
 .env
+
+# Mac Files
+.DS_Store
